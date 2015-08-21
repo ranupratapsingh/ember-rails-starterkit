@@ -15,11 +15,15 @@ var app = new EmberApp({
         css: '/assets/vendor.css',
         js: '/assets/vendor.js'
       }
+    },
+    sassOptions: {
+      includePaths: [
+        'bower_components/bootstrap-sass/assets/stylesheets'
+      ]
     }
   }
 );
 
-app.import('bower_components/bootstrap/dist/css/bootstrap.css');
 // Use `app.import` to add additional libraries to the generated
 // output files.
 //

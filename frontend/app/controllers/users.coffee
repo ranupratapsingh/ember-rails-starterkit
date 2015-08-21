@@ -1,4 +1,6 @@
 `import Em from 'ember'`
 
 UsersController = Em.ArrayController.extend
-  heading: 'Listing Users'
+  list: Em.computed.filterBy('content', 'isNew', false)
+
+`export default UsersController`

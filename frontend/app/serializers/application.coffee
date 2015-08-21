@@ -1,3 +1,6 @@
 `import DS from 'ember-data'`
 
-`export default DS.ActiveModelSerializer.extend()`
+#ApplicationSerializer = DS.RESTSerializer.extend()
+ApplicationSerializer = DS.ActiveModelSerializer.extend()
+
+`export default ApplicationSerializer`

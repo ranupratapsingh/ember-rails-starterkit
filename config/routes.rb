@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
-  resources :users
+  # user and authentication related routes start
+  resources :users, only: %w(index show update create) do
+    collection do
+      get 'logged_in'
+      post 'sign_in' => 'users#user_signin'
+      post 'change_password'
+      post 'forgot_password'
+      get 'resend_confirmation'
+    end
+  end
 
   devise_for :users, path: 'auth', controllers: {
                        confirmations: 'users/confirmations',
