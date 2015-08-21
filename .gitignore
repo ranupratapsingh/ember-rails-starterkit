@@ -16,5 +16,7 @@
 !/log/.keep
 /tmp
 .idea
+*.orig
+*~
 *.yml
 public
