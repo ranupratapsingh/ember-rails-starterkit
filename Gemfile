@@ -28,8 +28,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # use devise for authentication
 gem 'devise'
+# use cancancan for authorization
+gem 'cancancan'
 # Use Unicorn as the app server
 gem 'thin'
+# Use postgresql as the db server
+gem 'pg'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

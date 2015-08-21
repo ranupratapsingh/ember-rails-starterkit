@@ -1,6 +1,11 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, # :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  # just a dummy method for admin
+  def admin?
+    self.id == 1
+  end
 end
