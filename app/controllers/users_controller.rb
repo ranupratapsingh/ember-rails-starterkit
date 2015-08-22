@@ -79,6 +79,18 @@ class UsersController < ApplicationController
     end
   end
 
+  def user_signin
+    user = User.where(:email => params[:username]).first
+    if user.nil?
+      render json: {:message => 'No such user'}, status: :unauthorized
+    elsif user.valid_password? params[:password]
+      sign_in(:user, user)
+      render json: {:user => user}, status: :ok
+    else
+      render json: {:message => 'Incorrect Password'}, status: :unauthorized
+    end
+  end
+
   def resend_confirmation
     respond_to do |format|
       if current_user and current_user.confirmed_at.nil?

@@ -19,8 +19,8 @@ Rails.application.routes.draw do
   #For setting routes devise_scope must be used
   devise_scope :user do
     get 'sign_out' => 'users/sessions#destroy'
-    get 'sign_in' => 'users/sessions#new'
-    get 'sign_up' => 'users/registrations#new'
+    get 'sign_in' => 'home#index'
+    # get 'sign_up' => 'users/registrations#new'
   end
 
   # You can have the root of your site routed with "root"
