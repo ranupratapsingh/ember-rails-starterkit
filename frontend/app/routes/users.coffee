@@ -2,7 +2,7 @@
 
 UsersRoute = Em.Route.extend
   model: ->
-    @store.find('user')
+    @store.query('user', {})
   setupController:(controller, model)->
     controller.set 'model', model
   actions:

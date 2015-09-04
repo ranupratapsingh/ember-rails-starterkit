@@ -3,9 +3,7 @@
 HomeRoute = Em.Route.extend
   setupController: (controller, model)->
     @_super()
-    @session = @controllerFor('application').get('session')
-    current_user = @get('session.currentUser')
-    unless current_user
+    unless @get('session.currentUser')
       @transitionTo('login')
 
 `export default HomeRoute`

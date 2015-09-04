@@ -5,10 +5,10 @@ Router = Ember.Router.extend
   location: config.locationType
 
 Router.map ()->
-  @resource 'login', path: '/sign_in'
-  @resource 'home', ->
+  @route 'login', path: '/sign_in'
+  @route 'home', {resetNamespace: true}, ->
     @route 'dashboard'
-    @resource 'users', ->
+    @route 'users', {resetNamespace: true}, ->
       @route 'new'
       @route 'show', {path: '/:id'}
       @route 'edit', {path: '/:id/edit'}

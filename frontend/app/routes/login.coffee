@@ -5,7 +5,7 @@
 LoginRoute = Em.Route.extend
   beforeModel:->
     @_super()		# making default beforeModel hook run
-    session = @container.lookup('session:main')
+    session = @get('session')
     current_user = session.get('currentUser')
     if current_user
       @transitionTo('home')
@@ -13,8 +13,7 @@ LoginRoute = Em.Route.extend
   actions:
     login: ()->
       that = this
-      session = @container.lookup('session:main')
-      console.log 'hello'
+      session = @get('session')
       payload =
         username: @controller.get('userName')
         password: @controller.get('password')

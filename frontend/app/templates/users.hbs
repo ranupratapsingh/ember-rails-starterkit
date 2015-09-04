@@ -7,13 +7,13 @@
         <td>Email</td>
         <td>Actions</td>
       </tr>
-      {{#each list}}
+      {{#each list as |u|}}
         <tr>
-          <td>{{name}}</td>
-          <td>{{email}}</td>
+          <td>{{u.name}}</td>
+          <td>{{u.email}}</td>
           <td>
-            {{#link-to 'users.show' this class='btn-show'}}View{{/link-to}}
-            {{#link-to 'users.edit' this class='btn-edit'}}Edit{{/link-to}}
+            {{#link-to 'users.show' u class='btn-show'}}View{{/link-to}}
+            {{#link-to 'users.edit' u class='btn-edit'}}Edit{{/link-to}}
           </td>
         </tr>
       {{/each}}

@@ -9,8 +9,7 @@ ApplicationRoute = Em.Route.extend
       that = this
       success = (data)->
         if data['message'] != 'Nobody logged In'
-          session = that.container.lookup('session:main')
-          session.initialize({user: data})
+          that.get('session').initialize({user: data})
       Http.ajax(CONST.LOGGED_IN_USER_URL, 'GET', {}, this).then(success)
 
   model: ()->

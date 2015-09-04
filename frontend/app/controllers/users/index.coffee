@@ -1,6 +1,6 @@
 `import Em from 'ember'`
 
-UsersIndexController = Em.ArrayController.extend
+UsersIndexController = Em.Controller.extend
   heading: 'Listing Users'
 
 `export default UsersIndexController`
